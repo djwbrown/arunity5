@@ -145,9 +145,8 @@ public class ARTrackedObject : MonoBehaviour
 						if (!visible) {
 							// Marker was hidden but now is visible.
 							visible = visibleOrRemain = true;
-							if (eventReceiver != null) eventReceiver.BroadcastMessage("OnMarkerFound", marker, SendMessageOptions.DontRequireReceiver);
-
 							for (int i = 0; i < this.transform.childCount; i++) this.transform.GetChild(i).gameObject.SetActive(true);
+							if (eventReceiver != null) eventReceiver.BroadcastMessage("OnMarkerFound", marker, SendMessageOptions.DontRequireReceiver);
 						}
 
                         Matrix4x4 pose;
